@@ -64,7 +64,6 @@ public class CheeseController {
         for (int cheeseId : cheeseIds) {
             CheeseData.remove(cheeseId);
         }
-
         return "redirect:";
     }
 
