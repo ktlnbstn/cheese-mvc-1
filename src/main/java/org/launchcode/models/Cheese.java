@@ -32,17 +32,13 @@ public class Cheese {
         nextId++;
     }
 
-    public int getCheeseId() {
-        return cheeseId;
-    }
+    public int getCheeseId() { return cheeseId; }
 
     public void setCheeseId(int cheeseId) {
         this.cheeseId = cheeseId;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public void setName(String name) {
         this.name = name;
