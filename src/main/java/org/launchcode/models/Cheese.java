@@ -2,12 +2,20 @@ package org.launchcode.models;
 
 import org.hibernate.validator.constraints.Range;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.*;
 
 /**
  * Created by LaunchCode
  */
+@Entity
 public class Cheese {
+
+    @Id
+    @GeneratedValue
+    private int id;
 
     @NotNull
     @Size(min=3, max=15, message = "Cheese name must be between 3-15 characters.")
@@ -18,28 +26,18 @@ public class Cheese {
     private String description;
 
     private CheeseType type;
-    private int cheeseId;
-    private static int nextId = 1;
 
     @Range(min=1, max=5, message = "Rating must be between 1-5 stars.")
     private int rating;
 
     public Cheese(String name, String description) {
-        this();
         this.name = name;
         this.description = description;
     }
 
-    public Cheese() {
-        cheeseId = nextId;
-        nextId++;
-    }
+    public Cheese() { }
 
-    public int getCheeseId() { return cheeseId; }
-
-    public void setCheeseId(int cheeseId) {
-        this.cheeseId = cheeseId;
-    }
+    public int getId() { return id; }
 
     public String getName() { return name; }
 
