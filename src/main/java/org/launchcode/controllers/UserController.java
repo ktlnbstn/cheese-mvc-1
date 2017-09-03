@@ -1,6 +1,8 @@
 package org.launchcode.controllers;
 
 import org.launchcode.models.User;
+import org.launchcode.models.data.UserDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -14,6 +16,9 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("user")
 public class UserController {
+
+    @Autowired
+    private UserDao userDao;
 
     @RequestMapping(value = "")
     public String index(Model model, User user) {
