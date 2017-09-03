@@ -2,6 +2,8 @@ package org.launchcode.models;
 
 import org.hibernate.validator.constraints.Email;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -18,6 +20,8 @@ public class User {
     @Size(min=6, message = "Password must be more than 6 characters.")
     private String password;
 
+    @Id
+    @GeneratedValue
     private int userID;
 
     public String getUsername() {
